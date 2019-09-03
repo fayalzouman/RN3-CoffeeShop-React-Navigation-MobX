@@ -10,11 +10,13 @@ import coffeeStore from "../../store/coffeeStore";
 // Component
 import CoffeeItem from "./CoffeeItem";
 
-const CoffeeList = () => {
+const CoffeeList = ({ navigation }) => {
   const { cafes } = coffeeStore;
   let shops;
   if (cafes) {
-    shops = cafes.map(cafe => <CoffeeItem cafe={cafe} key={cafe.id} />);
+    shops = cafes.map(cafe => (
+      <CoffeeItem cafe={cafe} key={cafe.id} navigation={navigation} />
+    ));
   }
   return (
     <Content>

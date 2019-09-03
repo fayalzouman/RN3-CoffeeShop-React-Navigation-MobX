@@ -27,6 +27,11 @@ class CoffeeDetail extends Component {
     option: "Small"
   };
 
+  //   const cofDet = ({navigation}) => {
+  // const coffeeID = navigation.getParam("coffeeID")
+  // const coffeeDet
+  //   }
+
   changeDrink = value => {
     this.setState({
       drink: value
@@ -41,8 +46,10 @@ class CoffeeDetail extends Component {
 
   render() {
     const { cafes } = coffeeStore;
-    if (!cafes) return <Content />;
-    const cafe = cafes[0];
+    let cafe = cafes.find(
+      cafe => cafe.id === this.props.navigation.getParam("cafeID")
+    );
+    if (!cafe) return <Content />;
     return (
       <Content>
         <List>
