@@ -53,7 +53,7 @@ const Login = ({ navigation }) => {
         <Button full success onPress={() => navigation.navigate("ListScreen")}>
           <Text>Login</Text>
         </Button>
-        <Button full warning onPress={() => navigation.navigate("ListScreen")}>
+        <Button full warning onPress={() => navigation.replace("ListScreen")}>
           <Text>Register</Text>
         </Button>
       </List>

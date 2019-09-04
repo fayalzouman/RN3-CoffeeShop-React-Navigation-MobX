@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
+import CartButton from "../CartButton";
 
 // NativeBase Components
 import {
@@ -101,5 +102,14 @@ class CoffeeDetail extends Component {
     );
   }
 }
+
+CoffeeDetail.navigationOptions = ({ navigation }) => {
+  const cafeID = navigation.getParam("cafeID");
+  const cafe = coffeeStore.cafes.find(cafe => cafe.id === cafeID).name;
+  return {
+    title: cafe,
+    headerRight: <CartButton />
+  };
+};
 
 export default observer(CoffeeDetail);

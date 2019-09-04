@@ -14,7 +14,20 @@ const StackNav = createStackNavigator(
     CartScreen: CoffeeCart
   },
   {
-    initialRouteName: "LoginScreen"
+    initialRouteName: "LoginScreen",
+    defaultNavigationOptions: {
+      title: "Fay + Ais Coffee",
+      headerTintColor: "white",
+      headerStyle: {
+        backgroundColor: "#155964"
+      },
+      headerTitleStyle: {
+        fontWeight: "bold"
+      }
+    },
+    cardStyle: {
+      backgroundColor: "#155964"
+    }
   }
 );
 
