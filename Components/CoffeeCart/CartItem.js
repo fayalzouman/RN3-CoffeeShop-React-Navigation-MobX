@@ -1,4 +1,5 @@
 import React from "react";
+import cartStore from "../../store/cartStore";
 
 // NativeBase Components
 import { Text, Left, Body, Right, Button, ListItem, Icon } from "native-base";
@@ -16,7 +17,7 @@ const CartItem = ({ item }) => {
         <Text style={{ color: "white" }}>{item.quantity}</Text>
       </Body>
       <Right>
-        <Button transparent>
+        <Button transparent onPress={removeItemFromCart}>
           <Icon name="trash" style={{ color: "white", fontSize: 21 }} />
         </Button>
       </Right>

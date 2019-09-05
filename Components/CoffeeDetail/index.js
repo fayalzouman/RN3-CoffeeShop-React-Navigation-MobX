@@ -21,6 +21,7 @@ import styles from "./styles";
 
 // Store
 import coffeeStore from "../../store/coffeeStore";
+import cartStore from "../../store/cartStore";
 
 class CoffeeDetail extends Component {
   state = {
@@ -94,7 +95,13 @@ class CoffeeDetail extends Component {
               </Picker>
             </Body>
           </ListItem>
-          <Button full danger>
+          <Button
+            full
+            danger
+            onPress={() =>
+              addItemToCart(this.setState.drink, this.state.option)
+            }
+          >
             <Text>Add</Text>
           </Button>
         </List>
