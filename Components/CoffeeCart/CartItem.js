@@ -17,7 +17,7 @@ const CartItem = ({ item }) => {
         <Text style={{ color: "white" }}>{item.quantity}</Text>
       </Body>
       <Right>
-        <Button transparent onPress={removeItemFromCart}>
+        <Button transparent onPress={() => cartStore.removeItemFromCart(item)}>
           <Icon name="trash" style={{ color: "white", fontSize: 21 }} />
         </Button>
       </Right>

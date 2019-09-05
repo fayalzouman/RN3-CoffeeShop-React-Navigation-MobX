@@ -1,6 +1,5 @@
 import React from "react";
 import { observer } from "mobx-react";
-import cartStore from "../../store/cartStore";
 
 // NativeBase Components
 import { Text, List, Button } from "native-base";
@@ -21,7 +20,7 @@ const CoffeeCart = () => {
   return (
     <List>
       {cartItems}
-      <Button full danger onPress={removeItemFromCart}>
+      <Button full danger onPress={cartStore.checkoutCart}>
         <Text>Checkout</Text>
       </Button>
     </List>

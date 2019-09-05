@@ -26,7 +26,8 @@ import cartStore from "../../store/cartStore";
 class CoffeeDetail extends Component {
   state = {
     drink: "Cappuccino",
-    option: "Small"
+    option: "Small",
+    quantity: 1
   };
 
   //   const cofDet = ({navigation}) => {
@@ -98,9 +99,7 @@ class CoffeeDetail extends Component {
           <Button
             full
             danger
-            onPress={() =>
-              addItemToCart(this.setState.drink, this.state.option)
-            }
+            onPress={() => cartStore.addItemToCart(this.state)}
           >
             <Text>Add</Text>
           </Button>
